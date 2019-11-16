@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <span class="goBack">
+      <span class="goBack" @click="goBack" >
         <van-icon name="arrow-left" />
         <span>返回</span>
       </span>
@@ -28,7 +28,12 @@ export default {
         inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
       }
     };
-  }
+  },
+  methods: {
+    goBack(){
+      this.$router.go(-1)
+    }
+  },
 };
 </script>
 
