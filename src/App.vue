@@ -1,32 +1,85 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <!-- 头部 -->
+    <div class="header">西瓜西瓜吃西瓜.vant</div>
+    <!-- 轮播图 -->
+    <van-swipe :autoplay="3000" indicator-color="white" :height="200" >
+      <van-swipe-item v-for="item in swipeList" :key="item.id">
+        <van-image width="100%" height="200px" :src="item.img"/>
+      </van-swipe-item>
+    </van-swipe>  
+    <!-- 分类导航 -->
+    <van-row type="flex" justify="space-around">
+      <van-col span="8" v-for="item in navList" :key="item.id">
+        <van-icon :name="item.type" size='66px' :color='item.color'/>
+        <span>{{item.name}}</span> 
+      </van-col>
+    </van-row>
+
+    <!-- 底部tab栏 -->
+    <van-tabbar v-model="active">
+      <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item name="search" icon="search">会员</van-tabbar-item>
+      <van-tabbar-item name="friends" icon="friends-o">购物车</van-tabbar-item>
+      <van-tabbar-item name="setting" icon="setting-o">搜索</van-tabbar-item>
+    </van-tabbar>
+
   </div>
 </template>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<script>
+export default { 
+  data(){
+    return {
+      //轮播图数据
+      swipeList:[],
+      // tabbar 栏当当前点击数据
+      active:'home',
+      //分类导航数据
+      navList:[
+        {name:'新闻资讯',type:'fire',color:'red',id:1},
+        {name:'图片分享',type:'photo-o',color:'#FD3C4F',id:2},
+        {name:'商品购买',type:'shopping-cart-o',color:'#3F80FE',id:3},
+        {name:'留言反馈',type:'comment-o',color:'#2BC21B',id:4},
+        {name:'视频专区',type:'tv-o',color:'#FE3F00',id:5},
+        {name:'练习我们',type:'phone-o',color:'#FF772C',id:6}
+      ]
+    }
+  }, 
+  created(){
+    this.getSwipeList();
+  },
+  methods:{
+    getSwipeList(){
+      this.$http.get('/api/getlunbo')
+        .then((res)=>{
+          this.swipeList = res.data.message;
+          console.log(this.swipeList);  
+        })
+        .catch((rej)=>rej);
+    }
+
+
+
+  }
+}
+</script>
+
+<style scoped>
+.header { 
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
   text-align: center;
-  color: #2c3e50;
+  background-color: #1989fa;
+  color: white;
 }
-
-#nav {
-  padding: 30px;
+.van-col{
+  text-align: center;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.van-icon{
+  display: block;
+  margin: 5px auto 0;
 }
 </style>
