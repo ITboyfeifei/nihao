@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <span class="goBack">
+      <span class="goBack" >
         <van-icon name="arrow-left" />
         <span>返回</span>
       </span>
@@ -9,10 +9,10 @@
     </div>
     <router-view></router-view>
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="wap-home">主页</van-tabbar-item>
-      <van-tabbar-item icon="manager-o">会员</van-tabbar-item>
-      <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
-      <van-tabbar-item icon="search">搜索</van-tabbar-item>
+    <van-tabbar-item icon="wap-home" replace to="/home">主页</van-tabbar-item>
+      <van-tabbar-item icon="manager-o" replace to="/member">会员</van-tabbar-item>
+      <van-tabbar-item icon="shopping-cart-o" replace to="/shopcar">购物车</van-tabbar-item>
+      <van-tabbar-item icon="search" replace to="/search">搜索</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

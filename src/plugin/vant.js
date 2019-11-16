@@ -6,7 +6,8 @@ import {
   TabbarItem,
   Icon,
   Toast ,
-  List 
+  List ,
+  Image 
 } from 'vant';
 Vue.use(Button);
 Vue.use(NavBar);
@@ -14,5 +15,6 @@ Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(Icon);
 Vue.use(List);
+Vue.use(Image);
 
 Vue.prototype.$Toast=Toast

@@ -4,6 +4,7 @@ import Home from '../components/Home/Home.vue'
 import NewList from '../components/newList/NewList.vue'
 import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
+import GoodsDetails from "../components/goods/GoodsDetails.vue"
 
 
 Vue.use(VueRouter)
@@ -27,6 +28,14 @@ const routes = [{
     path: '/goods/list',
     name: 'goods',
     component: goods
+  },{
+    path: '/goods/list',
+    name: 'goods',
+    component: goods
+  },{
+    path: '/goods/detail',
+    name: 'goodsDetail',
+    component: GoodsDetails
   },
 
 ]
