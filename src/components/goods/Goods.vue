@@ -1,16 +1,42 @@
+
 <template>
-  <div id="app">
-    <router-view></router-view>
+  <div>
+    <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+      <van-cell v-for="item in list" :key="item" :title="item" />
+    </van-list>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
-}
-
+  name: "goodsList",
+  data() {
+    return {
+      list: [],
+      loading: false,
+      finished: false,
+      // 默认一页显示几个
+      pageindex: 1
+    };
+  },
+  created() {
+    this.getGoodsList();
+  },
+  mounted() {
+    this.finished = false;
+  },
+  methods: {
+    onLoad() {
+      this.loading = true;
+    },
+    async getGoodsList() {
+      const data = await this.$http.get("/api/getgoods?pageindex=" + this.pageindex);
+      console.log(data.status);
+      if (data.status != 200) return this.$Toast.fail("获取失败");
+      this.finished = false;
+    }
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style lang="less" scoped></style>
