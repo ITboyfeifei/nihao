@@ -7,7 +7,10 @@ import {
   Icon,
   Toast ,
   List ,
-  Image 
+  Image ,
+  Swipe, 
+  SwipeItem,
+  Stepper 
 } from 'vant';
 Vue.use(Button);
 Vue.use(NavBar);
@@ -16,5 +19,8 @@ Vue.use(TabbarItem);
 Vue.use(Icon);
 Vue.use(List);
 Vue.use(Image);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(Stepper);
 
 Vue.prototype.$Toast=Toast
