@@ -1,8 +1,9 @@
-
 <template>
   <div>
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-      <van-cell v-for="item in list" :key="item" :title="item" />
+      <ul>
+        <li></li>
+      </ul>
     </van-list>
   </div>
 </template>
@@ -21,19 +22,20 @@ export default {
   },
   created() {
     this.getGoodsList();
+    this.loading = false;
+
   },
-  mounted() {
-    this.finished = false;
-  },
+ 
   methods: {
     onLoad() {
       this.loading = true;
     },
     async getGoodsList() {
       const data = await this.$http.get("/api/getgoods?pageindex=" + this.pageindex);
-      console.log(data.status);
+      console.log(data.data.message);
       if (data.status != 200) return this.$Toast.fail("获取失败");
-      this.finished = false;
+      this.finished = true;
+      
     }
   }
 };
