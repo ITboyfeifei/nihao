@@ -66,6 +66,7 @@ export default {
     float: left;
     width: 168px;
     height: 351px;
+    border: 1px solid #eee;
     // background-color: pink;
     // margin-right: 7px;
     // margin-left: 8px
