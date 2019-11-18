@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import "./plugin/vant"
+import './vant/vant.js'
+import './assets/gelobal.css'
 import axios from "axios"
 // 配置 接口基准地址
 axios.defaults.baseURL = "http://www.liulongbin.top:3005/"

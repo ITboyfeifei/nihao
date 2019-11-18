@@ -4,12 +4,19 @@ import Home from '../components/Home/Home.vue'
 import NewList from '../components/newList/NewList.vue'
 import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
+import Search from '../components/Search/Search.vue'
+import Addgoods from '../components/Search/Addgoods.vue'
+
 
 
 Vue.use(VueRouter)
 
-const routes = [{
-    path: '/',
+const routes = [
+  {
+    path:'/',redirect:{name:'home'}
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -28,7 +35,14 @@ const routes = [{
     name: 'goods',
     component: goods
   },
-
+  {
+    path: '/search',
+    component: Search
+  },
+  {
+    path: '/addgoods',
+    component: Addgoods
+  },
 ]
 
 const router = new VueRouter({
