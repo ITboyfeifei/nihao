@@ -15,26 +15,23 @@
         <span>{{item.name}}</span> 
       </van-grid-item>
     </van-grid>
-
     <!-- 底部tab栏 -->
-    <van-tabbar v-model="active">
-      <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item name="search" icon="search">会员</van-tabbar-item>
-      <van-tabbar-item name="friends" icon="friends-o">购物车</van-tabbar-item>
-      <van-tabbar-item name="setting" icon="setting-o">搜索</van-tabbar-item>
+    <van-tabbar v-model="active" :route='true'>
+      <van-tabbar-item name="home" icon="home-o" to="/home">首页</van-tabbar-item>
+      <van-tabbar-item name="search" icon="search" to="/router">会员</van-tabbar-item>
+      <van-tabbar-item name="friends" icon="friends-o" to="/shop">购物车</van-tabbar-item>
+      <van-tabbar-item name="setting" icon="setting-o" to="/search">搜索</van-tabbar-item>
     </van-tabbar>
-
   </div>
 </template>
 
 <script>
-export default { 
+import { mapState,mapMutations } from 'vuex'
+export default {
   data(){
     return {
       //轮播图数据
       swipeList:[],
-      // tabbar 栏当当前点击数据
-      active:'home',
       //分类导航数据
       navList:[
         {name:'新闻资讯',type:'fire',color:'red',id:1,to:'/newslist'},
@@ -46,8 +43,19 @@ export default {
       ]
     }
   }, 
+
   created(){
     this.getSwipeList();
+  },
+  computed: {
+     active: {
+        get(){
+          return this.$store.state.active;
+        },  
+        set(val){
+　　　　　　this.$store.commit('tabChange',{val});
+        }
+      }
   },
   methods:{
     getSwipeList(){
@@ -57,10 +65,7 @@ export default {
           console.log(this.swipeList);  
         })
         .catch((rej)=>rej);
-    }
-
-
-
+    },
   }
 }
 </script>
