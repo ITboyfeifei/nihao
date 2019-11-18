@@ -15,13 +15,7 @@
         <span>{{item.name}}</span> 
       </van-grid-item>
     </van-grid>
-    <!-- 底部tab栏 -->
-    <van-tabbar v-model="active" :route='true'>
-      <van-tabbar-item name="home" icon="home-o" to="/home">首页</van-tabbar-item>
-      <van-tabbar-item name="search" icon="search" to="/router">会员</van-tabbar-item>
-      <van-tabbar-item name="friends" icon="friends-o" to="/shop">购物车</van-tabbar-item>
-      <van-tabbar-item name="setting" icon="setting-o" to="/search">搜索</van-tabbar-item>
-    </van-tabbar>
+
   </div>
 </template>
 
@@ -29,6 +23,7 @@
 import { mapState,mapMutations } from 'vuex'
 export default {
   data(){
+    console.log(this);
     return {
       //轮播图数据
       swipeList:[],
@@ -36,11 +31,12 @@ export default {
       navList:[
         {name:'新闻资讯',type:'fire',color:'red',id:1,to:'/newslist'},
         {name:'图片分享',type:'photo-o',color:'#FD3C4F',id:2,to:'/photo/list'},
-        {name:'商品购买',type:'shopping-cart-o',color:'#3F80FE',id:3,to:'/goods/list'},
+        {name:'商品购买',type:'shopping-cart-o',color:'#3F80FE',id:3,to:'/goods/list'},   
         {name:'留言反馈',type:'comment-o',color:'#2BC21B',id:4,to:'/'},
         {name:'视频专区',type:'tv-o',color:'#FE3F00',id:5,to:''},
         {name:'联系我们',type:'phone-o',color:'#FF772C',id:6,to:'/'}
-      ]
+      ],
+    
     }
   }, 
 
@@ -48,21 +44,12 @@ export default {
     this.getSwipeList();
   },
   computed: {
-     active: {
-        get(){
-          return this.$store.state.active;
-        },  
-        set(val){
-　　　　　　this.$store.commit('tabChange',{val});
-        }
-      }
   },
   methods:{
     getSwipeList(){
       this.$http.get('/api/getlunbo')
         .then((res)=>{
           this.swipeList = res.data.message;
-          console.log(this.swipeList);  
         })
         .catch((rej)=>rej);
     },

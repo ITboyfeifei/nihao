@@ -8,8 +8,12 @@ import goods from "../components/goods/Goods.vue"
 
 Vue.use(VueRouter)
 
-const routes = [{
-    path: '/',
+const routes = [
+  {
+    path:'/',redirect:{name:'home'}
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -28,7 +32,6 @@ const routes = [{
     name: 'goods',
     component: goods
   },
-
 ]
 
 const router = new VueRouter({
