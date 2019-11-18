@@ -35,7 +35,6 @@
     <div class="taglist">
       <van-tag>标签</van-tag>
     </div>
-
     <van-divider class="vandivder">暂无搜索历史</van-divider>
   </div>
 </template>
@@ -45,9 +44,11 @@ export default {
   data() {
     return {
       //输入框内容
-      value: "",
+      value: '',
       //搜索列表数据
-      searchList: []
+      searchList: '',
+      //搜索历史记录
+      historysearch:[]
     };
   },
   methods: {
@@ -55,7 +56,6 @@ export default {
       const { data: res } = await this.$http.get("api/getprodlist");
       // console.log(res.message);
       this.searchList = res.message;
-      console.log(this.searchList);
     },
     //返回
     onClickLeft() {
@@ -66,8 +66,13 @@ export default {
       this.$router.push("/addgoods");
     },
     // 点击键盘上的搜索/回车按钮后触发
-    onSearch() {
+    onSearch(value) {
+      // console.log(value);
+      if(value.trim().length <= 0) return this.$toast('请输入搜索内容')
       this.getSearch();
+      // localStorage.setItem('historysearch',this.value)
+      // var arr = localStorage.getItem('list').split(',')
+      
     },
     // 事件在点击搜索框右侧取消按钮时触发
     onCancel() {
@@ -108,6 +113,7 @@ export default {
 .vandivder {
   color: black;
   font-size: 14px;
+  display: none;
 }
 .taglist {
   margin: 0 10px;

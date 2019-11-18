@@ -19,7 +19,6 @@ export default {
         {displayName:'会员',styleName:'vip',icon:'friends-o',to:'/shop'},
         {displayName:'购物车',styleName:'shopping-car',icon:'shopping-cart-o',to:'',info:this.$store.state.shopNum},
         {displayName:'搜索',styleName:'search',icon:'search',to:'/search'},
-
       ],
     }
   },

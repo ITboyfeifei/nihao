@@ -20,7 +20,8 @@ import {
     SwipeCell,
     Tag,
     Dialog,
-    Notify
+    Notify,
+    Toast
 } from 'vant';
 
 Vue.use(Swipe)
@@ -44,5 +45,5 @@ Vue.use(SwipeCell)
 Vue.use(Tag)
 Vue.use(Dialog)
 Vue.use(Notify)
-
+Vue.use(Toast)
 Vue.prototype.$Dialog = Dialog.confirm
