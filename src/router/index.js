@@ -6,7 +6,7 @@ import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
 import GoodsDetails from "../components/goods/GoodsDetails.vue"
 import GoodsIntroduce from "../components/goods/GoodsIntroduce.vue"
-
+import Goodscomments from "../components/goods/Goodscomments.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -40,6 +40,10 @@ const routes = [{
     path: '/goodsdesc/:id',
     name: 'goodsdesc',
     component: GoodsIntroduce
+  },{
+    path: '/goodscomments/:id',
+    name: 'Goodscomments',
+    component: Goodscomments
   },
 
 ]
