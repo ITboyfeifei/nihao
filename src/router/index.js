@@ -5,7 +5,7 @@ import NewList from '../components/newList/NewList.vue'
 import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
 import GoodsDetails from "../components/goods/GoodsDetails.vue"
-
+import GoodsIntroduce from "../components/goods/GoodsIntroduce.vue"
 
 Vue.use(VueRouter)
 
@@ -36,6 +36,10 @@ const routes = [{
     path: '/goods/detail/:id',
     name: 'goodsDetail',
     component: GoodsDetails
+  },{
+    path: '/goodsdesc/:id',
+    name: 'goodsdesc',
+    component: GoodsIntroduce
   },
 
 ]
