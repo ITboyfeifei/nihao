@@ -6,7 +6,8 @@ import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
 import GoodsDetails from "../components/goods/GoodsDetails.vue"
 import GoodsIntroduce from "../components/goods/GoodsIntroduce.vue"
-import Goodscomments from "../components/goods/Goodscomments.vue"
+import Goodscomments from "../components/goods/Message.vue"
+import shoppingCar from "../components/shoppingCar/shoppingCar.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -44,6 +45,11 @@ const routes = [{
     path: '/goodscomments/:id',
     name: 'Goodscomments',
     component: Goodscomments
+  }
+  ,{
+    path: '/shopcar',
+    name: 'shopcar',
+    component: shoppingCar
   },
 
 ]

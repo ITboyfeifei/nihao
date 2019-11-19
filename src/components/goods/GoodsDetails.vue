@@ -82,7 +82,7 @@ export default {
     goIntroduce(){
       this.$router.push({ path: `/goodsdesc/${this.id}` })
     },
-    // 跳转到
+    // 跳转到评论区
     goodscomments(){
       this.$router.push({ path: `/goodscomments/${this.id}` })
 
