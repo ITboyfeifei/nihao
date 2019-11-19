@@ -11,7 +11,6 @@ export default new Vuex.Store({
   mutations: {  
     tabChange(state,params){
       state.active = params.val;
-      console.log(state.active);
     }
   },
   actions: {
