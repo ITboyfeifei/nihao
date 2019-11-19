@@ -8,6 +8,9 @@ import GoodsDetails from "../components/goods/GoodsDetails.vue"
 import GoodsIntroduce from "../components/goods/GoodsIntroduce.vue"
 import Goodscomments from "../components/goods/Message.vue"
 // import shoppingCar from "../components/shoppingCar/shoppingCar.vue"
+import Search from '../components/Search/Search.vue'
+import Addgoods from '../components/Search/Addgoods.vue'
+// import Member from '../components/Member/Member.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -55,6 +58,18 @@ const routes = [
     name: 'shopcar',
     // component: shoppingCar
   },
+  {
+    path: '/search',
+    component: Search
+  },
+  {
+    path: '/addgoods',
+    component: Addgoods
+  },
+  // {
+  //   path: '/member',
+  //   component: Member
+  // },
 ]
 
 const router = new VueRouter({
