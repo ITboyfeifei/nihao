@@ -1,0 +1,155 @@
+[33mcommit 3e9d285ad393ad97d8b1ae8ff9827f385aa636ab[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 55fd254 2154855
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Tue Nov 19 09:57:47 2019 +0800
+
+    暂存
+
+[33mcommit 55fd2544c9ce42b10e3796914fc91ef4aad3d8f5[m[33m ([m[1;31morigin/master[m[33m)[m
+Merge: 52cc3ce 07a5f89
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Tue Nov 19 09:49:18 2019 +0800
+
+    添加购物车路由
+
+[33mcommit 07a5f89228da64302ef48b30ef80ab4c42b6411c[m[33m ([m[1;32mgoods_list[m[33m)[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Tue Nov 19 09:19:49 2019 +0800
+
+    评论功能已完成
+
+[33mcommit 89f8a0caab20aebf25fa84c7911533538e68f171[m[33m ([m[1;31morigin/goods_list[m[33m)[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Tue Nov 19 08:59:06 2019 +0800
+
+    商品详情修正
+
+[33mcommit 52cc3ceea8fe55d09c2a045d5ebc137ce510feb4[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Mon Nov 18 21:55:36 2019 +0800
+
+    还差一个评论
+
+[33mcommit a2f647fca2195765542300c728dfaef0320baf2c[m
+Merge: 5cf2c17 5e9b348
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Mon Nov 18 21:24:34 2019 +0800
+
+    Merge branch 'goods_list'
+
+[33mcommit 5e9b3483a93574ba1889047b25ae7fe437296503[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Mon Nov 18 21:23:18 2019 +0800
+
+    商品参数价格完成
+
+[33mcommit 2154855f32118071d39057e2213225908db76a2d[m
+Author: 张显磊 <1079105171@qq.com>
+Date:   Mon Nov 18 11:13:52 2019 +0800
+
+    主页相关功能全部完成
+
+[33mcommit f9ed0db22d24e3df0e6315a7090da48fd8111045[m
+Author: 张显磊 <1079105171@qq.com>
+Date:   Mon Nov 18 09:30:42 2019 +0800
+
+    主页完成,底部tab路由框架完成，没有输入正确的访问路径
+
+[33mcommit 5cf2c170b249fa4fa8a6fcfa12c87884ae19d993[m
+Merge: 181c284 be5ce2a
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 21:49:02 2019 +0800
+
+    Merge branch 'goods_list'
+
+[33mcommit be5ce2a36549d0c7f27c80e6b3d0de18a08f5482[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 21:48:17 2019 +0800
+
+    商品详情页未完成
+
+[33mcommit 181c284b275e3e13d26f19b33643ce9e83d3a0db[m
+Merge: 19dbd3f 0ca0692
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 20:08:55 2019 +0800
+
+    合并
+
+[33mcommit 19dbd3fcdc79b1a0f524178d3ded0e880f28ad2b[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 20:01:43 2019 +0800
+
+    主分支返回功能更新
+
+[33mcommit 0ca06926f332b907ebda1ba39624b5873ac97591[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 19:49:50 2019 +0800
+
+    11
+
+[33mcommit 954173227fe8c405f2489b2ff144958434493014[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 19:39:23 2019 +0800
+
+    商品列表完成
+
+[33mcommit a77171ffd22cae508494435f78fca3b8126a7afc[m
+Merge: a5bd922 526a406
+Author: 张显磊 <1079105171@qq.com>
+Date:   Sat Nov 16 18:02:04 2019 +0800
+
+    主页布局基本完成
+
+[33mcommit 384ee3deac1db6db689a0c7f82f3cb3f8402dfa3[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 17:55:17 2019 +0800
+
+    主分支添加路由
+
+[33mcommit 6f3f9941c834cc8623529d8059a94ebbca7d74bf[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 17:53:10 2019 +0800
+
+    暂时切换
+
+[33mcommit 1a9a45b34b3e486caa975d229f4d97477a6a6842[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 16:58:08 2019 +0800
+
+    暂停
+
+[33mcommit f999650428093f7076fed0a0ad3e4e0c3415140e[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 16:53:46 2019 +0800
+
+    主分支优化
+
+[33mcommit a5bd922f3b0fd0fb42757f17fa8ad6ada83ef12e[m
+Author: 张显磊 <1079105171@qq.com>
+Date:   Sat Nov 16 15:19:11 2019 +0800
+
+    创建home分支
+
+[33mcommit 526a4069249b9dae31808a5b10cedbc3de7dc6bb[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 14:44:29 2019 +0800
+
+    主分支优化
+
+[33mcommit 6b1cab8ae79bf64102a581047aa3672404b743d8[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 14:29:25 2019 +0800
+
+    主分支
+
+[33mcommit 12ad0651c9e57fa14dd154cfb09089ba0cd50118[m
+Author: 鱼多多 <1049218799@qq.com>
+Date:   Sat Nov 16 13:37:51 2019 +0800
+
+    init
+
+[33mcommit 5b94a08819ba0282d7c30e57ea864f77ab0f89ff[m
+Author: 张显磊 <1079105171@qq.com>
+Date:   Sat Nov 16 10:38:10 2019 +0800
+
+    init

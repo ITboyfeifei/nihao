@@ -13,7 +13,10 @@ export default new Vuex.Store({
       state.id=obj.goodsId;
       state.value=obj.value
       console.log(state.id,state.value)
-    }
+    },
+    tabChange(state,params){
+      state.active = params.val;
+    },
   },
   actions: {
   },

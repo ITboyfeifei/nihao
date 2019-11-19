@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- 头部 -->
-    <div class="header">西瓜西瓜吃西瓜.vant</div>
     <!-- 轮播图 -->
     <van-swipe :autoplay="3000" indicator-color="white" :height="200" >
       <van-swipe-item v-for="item in swipeList" :key="item.id">
@@ -15,7 +13,6 @@
         <span>{{item.name}}</span> 
       </van-grid-item>
     </van-grid>
-
   </div>
 </template>
 
@@ -23,7 +20,6 @@
 import { mapState,mapMutations } from 'vuex'
 export default {
   data(){
-    console.log(this);
     return {
       //轮播图数据
       swipeList:[],
@@ -58,15 +54,7 @@ export default {
 </script>
 
 <style scoped>
-.header { 
-  width: 100%;
-  height: 40px;
-  font-size: 14px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #1989fa;
-  color: white;
-}
+
 .van-col{
   text-align: center;
 }

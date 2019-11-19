@@ -1,72 +1,86 @@
 <template>
   <div id="app">
-    <div class="header">
-      <span class="goBack" @click="goBack">
-        <van-icon name="arrow-left" />
-        <span>返回</span>
-      </span>
-      黑马程序员
-    </div>
-    <router-view></router-view>
-    <van-tabbar v-model="active">
-    <van-tabbar-item icon="wap-home" replace to="/home">主页</van-tabbar-item>
-      <van-tabbar-item icon="manager-o" replace to="/member">会员</van-tabbar-item>
-      <van-tabbar-item icon="shopping-cart-o" replace to="/shopcar">购物车</van-tabbar-item>
-      <van-tabbar-item icon="search" replace to="/search">搜索</van-tabbar-item>
-    </van-tabbar>
+      <!-- 头部 -->
+      <div class="header">西瓜西瓜吃西瓜.vant</div>
+      <div :class="active == 'home'?'back hidden':'back'" v-on:click="turnBack"><van-icon name="arrow-left" size="20px" /></div>
+      <!-- 组件占位符 -->
+      <router-view ></router-view>
+      <!-- 底部tab栏 -->
+      <van-tabbar v-model="active" :route='true' :class="active == 'shopping-car'?'hidden':'null'">
+        <van-tabbar-item :name="item.styleName" :icon="item.icon" :to="item.to" v-for="item in tabberList" :key='item.styleName' :info="item.info == 0? null : item.info">{{item.displayName}}</van-tabbar-item>
+      </van-tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app",
-  data() {
+  name: 'app',  
+  data(){ 
     return {
-      active: 0,
-      icon: {
-        active: "https://img.yzcdn.cn/vant/user-active.png",
-        inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
-      }
-    };
+      //底部 tabber 数据
+      tabberList:[  
+        {displayName:'首页',styleName:'home',icon:'home-o',to:'/home'},
+        {displayName:'会员',styleName:'vip',icon:'friends-o',to:'/vip'},
+        {displayName:'购物车',styleName:'shopping-car',icon:'shopping-cart-o',to:'/shop-car',info:this.$store.state.shopNum},
+        {displayName:'搜索',styleName:'search',icon:'search',to:'/search'},
+      ],
+      // 当前路径数据
+      path: this.$route.path
+    }
+  },
+  computed: {
+    active: {
+        get(){
+          return this.$store.state.active;
+        },  
+        set(val){
+　　　　　　this.$store.commit('tabChange',{val});
+        }
+    }
   },
   methods: {
-   goBack(){
-     this.$router.go(-1)
-   }
+    turnBack(){
+      var flag = false;
+      for(var item of this.tabberList){
+        this.path == item.to && (flag = true);
+      }
+      console.log(flag);
+      flag === true ? this.$router.push('/home') && (this.active = 'home') : this.$router.go(-1);
+    }
   },
-};
+  created(){
+    this.active = this.path;
+  }
+}
 </script>
 
-<style lang="less" scoped>
-  .header{
-    width: 100%;
-    height: 40px;
-    background: #1989fa;
-    text-align: center;
-    line-height: 40px;
-    color: #fff;
-    font-size: 14px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    .goBack{
-      position: fixed;
-      top:4px;
-      left:15px ;
-      vertical-align: middle;
-      .van-icon{
-        font-size: 20px;
-      }
-      span{
-        position: absolute;
-        top: -5px;
-        left: 16px;
-        // display: block;
-        width: 45px;
-        font-size: 16px
-
-      }
-    }
-  }
+<style>
+.header { 
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #1989fa;
+  color: white;
+  vertical-align: middle;
+}
+.back{
+  position: absolute;
+  top: 11px;
+  width: 80px;
+  color: white;
+  text-align: center;
+}
+.van-icon-arrow-left:after{
+  font-size: 16px;
+  content: '返回';
+}
+.van-icon-arrow-left:before,
+.van-icon-arrow-left:after{
+  vertical-align: top!important;
+}
+.hidden{
+  display: none!important;
+}
 </style>

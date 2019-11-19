@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import "./element/element.js"
+import"./plugin/vant"
 import './assets/gelobal.css'
 import axios from "axios"
 // 配置 接口基准地址

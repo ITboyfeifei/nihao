@@ -7,7 +7,7 @@ import goods from "../components/goods/Goods.vue"
 import GoodsDetails from "../components/goods/GoodsDetails.vue"
 import GoodsIntroduce from "../components/goods/GoodsIntroduce.vue"
 import Goodscomments from "../components/goods/Message.vue"
-import shoppingCar from "../components/shoppingCar/shoppingCar.vue"
+// import shoppingCar from "../components/shoppingCar/shoppingCar.vue"
 Vue.use(VueRouter)
 
 const routes = [
@@ -53,7 +53,7 @@ const routes = [
   ,{
     path: '/shopcar',
     name: 'shopcar',
-    component: shoppingCar
+    // component: shoppingCar
   },
 ]
 
