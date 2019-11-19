@@ -35,7 +35,7 @@ export default {
   },
   created() {
     this.getGoodsList();
-    this.loading = false;
+   
   },
 
   methods: {
@@ -46,8 +46,13 @@ export default {
       const data = await this.$http.get("/api/getgoods?pageindex=" + this.pageindex);
       console.log(data.data.message);
       if (data.status != 200) return this.$Toast.fail("获取失败");
-      this.finished = true;
+      
       this.list = data.data.message;
+      if(this.list.length!=0){
+        this.finished=true;
+      }
+       this.loading = false;
+
     },
     pushGo(id){
       this.$router.push({ path: `/goods/detail/${id}` })
