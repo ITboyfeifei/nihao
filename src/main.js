@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 // import "./element/element.js"
 import "./plugin/vant"
-import './vant/vant.js'
+
 import './assets/gelobal.css'
 import axios from "axios"
 // 配置 接口基准地址
