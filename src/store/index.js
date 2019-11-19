@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     id:0,
-    value:1
+    value:1,
+    active:"home",
   },
   mutations: {
     goodsId(state,obj){

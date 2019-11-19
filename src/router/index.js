@@ -51,7 +51,7 @@ const routes = [
     component: Goodscomments
   }
   ,{
-    path: '/shopcar',
+    path: '/shop-car',
     name: 'shopcar',
     // component: shoppingCar
   },

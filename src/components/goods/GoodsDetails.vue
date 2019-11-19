@@ -21,16 +21,16 @@
       </div>
       <div class="button">
         <van-button type="info" style="margin-right:10px;border-radius:5px">购买商品</van-button>
-        <van-button type="danger" style="border-radius:5px" @click="addShopCar(id,value)">加入购物车</van-button>
+        <van-button type="danger" style="border-radius:5px" @click="addShopCar(id, value)">加入购物车</van-button>
       </div>
     </div>
     <!-- 商品参数 -->
     <div class="goodParams" v-for="(item, index) in details" :key="index">
-      <div class="title">{{item.title}}</div>
-      <div class="body" >
+      <div class="title">{{ item.title }}</div>
+      <div class="body">
         <p>商品货号: {{ item.goods_no }}</p>
         <p>库存情况: {{ item.stock_quantity }}件</p>
-        <p>上架时间:{{item.add_time | format}}</p>
+        <p>上架时间:{{ item.add_time | format }}</p>
       </div>
       <div class="btns">
         <van-button plain hairline type="info" @click="goIntroduce">图文介绍</van-button>
@@ -40,7 +40,6 @@
   </div>
 </template>
 <script>
-
 export default {
   data() {
     return {
@@ -79,13 +78,12 @@ export default {
       this.$store.commit("goodsId", obj)
     },
     // 跳转到图文介绍
-    goIntroduce(){
+    goIntroduce() {
       this.$router.push({ path: `/goodsdesc/${this.id}` })
     },
     // 跳转到评论区
-    goodscomments(){
+    goodscomments() {
       this.$router.push({ path: `/goodscomments/${this.id}` })
-
     }
   }
 }
@@ -93,18 +91,27 @@ export default {
 <style lang="less">
 .mainBox {
   padding: 10px;
+  .swipeBox {
+    width: 355px;
+    height: 232px;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+    border-radius: 3px;
+    .van-swipe {
+      width: 355px;
+      height: 232px;
+      .van-swipe-item {
+        img {
+          display: block;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }
-.swipeBox {
-  width: 355px;
-  height: 232px;
-  border: 1px solid #ccc;
-  margin-top: 40px;
-  border-radius: 3px;
-}
-.van-swipe {
-  width: 355px;
-  height: 232px;
-}
+
 .goods_pirce {
   width: 325px;
   // height: 232px;
@@ -150,14 +157,7 @@ export default {
 .button {
   margin-top: 10px;
 }
-.van-swipe-item {
-  img {
-    display: block;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
-}
+
 .goodParams {
   width: 325px;
 
