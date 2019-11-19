@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 头部 -->
-    <van-nav-bar title="商品添加" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar title="商品添加"   />
 
     <!-- 输入框 -->
     <van-cell-group>
@@ -19,10 +19,8 @@ export default {
     };
   },
   methods: {
-    // 点击返回
-    onClickLeft() {
-      this.$router.push("/search");
-    },
+  
+    
    async addshop(){
      if(this.value.trim().length <= 0) return this.$notify('请输入商品内容')
         const {data: res} = await this.$http.post('/api/addproduct',{name: this.value})

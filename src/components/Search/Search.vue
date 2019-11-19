@@ -1,11 +1,8 @@
 <template>
   <div>
     <van-nav-bar
-      title="商城搜索"
-      left-text="返回"
+      title="商城搜索"     
       right-text="添加"
-      left-arrow
-      @click-left="onClickLeft"
       @click-right="onClickRight"
     />
     <!-- 搜索 -->
@@ -63,10 +60,7 @@ export default {
       // console.log(res.message);
       this.searchList = res.message;
     },
-    //返回
-    onClickLeft() {
-      this.$router.push("/home");
-    },
+    
     //添加
     onClickRight() {
       this.$router.push("/addgoods");
