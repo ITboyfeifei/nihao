@@ -34,7 +34,7 @@
       </div>
       <div class="btns">
         <van-button plain hairline type="info" @click="goIntroduce">图文介绍</van-button>
-        <van-button plain hairline type="danger">商品评论</van-button>
+        <van-button plain hairline type="danger" @click="goodscomments">商品评论</van-button>
       </div>
     </div>
   </div>
@@ -81,6 +81,11 @@ export default {
     // 跳转到图文介绍
     goIntroduce(){
       this.$router.push({ path: `/goodsdesc/${this.id}` })
+    },
+    // 跳转到评论区
+    goodscomments(){
+      this.$router.push({ path: `/goodscomments/${this.id}` })
+
     }
   }
 }
