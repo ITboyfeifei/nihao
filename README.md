@@ -1,4 +1,4 @@
-# shop_yu
+# vueprog
 
 ## Project setup
 ```

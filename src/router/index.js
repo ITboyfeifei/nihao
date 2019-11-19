@@ -10,8 +10,12 @@ import Goodscomments from "../components/goods/Message.vue"
 import shoppingCar from "../components/shoppingCar/shoppingCar.vue"
 Vue.use(VueRouter)
 
-const routes = [{
-    path: '/',
+const routes = [
+  {
+    path:'/',redirect:{name:'home'}
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -51,7 +55,6 @@ const routes = [{
     name: 'shopcar',
     component: shoppingCar
   },
-
 ]
 
 const router = new VueRouter({
