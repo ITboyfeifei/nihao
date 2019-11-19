@@ -29,13 +29,16 @@
     <!-- 搜索历史 -->
     <div class="top">
       <span>搜索历史</span>
-      <van-icon name="delete"  class="icon_delete"/>
+      <van-icon name="delete"  class="icon_delete" @click="remove"/>
     </div>
     <!-- 历史记录 -->
     <div class="taglist">
-      <van-tag>标签</van-tag>
+      <van-tag v-for="(item,index) in historysearch" :key="index" @click="tagclick(item)">{{item}}</van-tag>
     </div>
+
+
     <van-divider class="vandivder">暂无搜索历史</van-divider>
+
   </div>
 </template>
 
@@ -50,6 +53,9 @@ export default {
       //搜索历史记录
       historysearch:[]
     };
+  },
+  created() {
+    this.historysearch = JSON.parse(localStorage.getItem('historysearch')) || []
   },
   methods: {
     async getSearch() {
@@ -67,11 +73,24 @@ export default {
     },
     // 点击键盘上的搜索/回车按钮后触发
     onSearch(value) {
-      // console.log(value);
+      console.log('value',value);
       if(value.trim().length <= 0) return this.$toast('请输入搜索内容')
       this.getSearch();
-      // localStorage.setItem('historysearch',this.value)
-      // var arr = localStorage.getItem('list').split(',')
+      // localStorage.setItem('historysearch',JSON.stringify(value))
+      if(!localStorage['historysearch']){
+        console.log(111);
+        localStorage.setItem('historysearch',"[]")
+      }
+      !this.historysearch.includes(value) && this.historysearch.push(value)
+      // console.log(JSON.stringify(this.historysearch))
+      localStorage['historysearch'] = JSON.stringify(this.historysearch);
+      // console.log(localStorage['historysearch']);
+      var arr = JSON.parse(localStorage.getItem('historysearch'))
+      // console.log(arr);
+      this.historysearch = arr
+      console.log(this.historysearch);
+      
+      
       
     },
     // 事件在点击搜索框右侧取消按钮时触发
@@ -81,7 +100,7 @@ export default {
     },
     //点击输入框清除按钮
     onClear() {
-      this.onCancel();
+      this.onCancel()
     },
     //删除商品
     async removeCell(id) {
@@ -94,6 +113,13 @@ export default {
       const { data: res } = await this.$http.get("api/delproduct/" + id);
       this.$notify({ type: "success", message: "删除成功" });
       this.getSearch();
+    },
+    tagclick(item){
+      this.value = item
+    },
+    remove(){
+      localStorage.removeItem('historysearch')
+      this.historysearch = []
     }
   }
 };
@@ -117,5 +143,8 @@ export default {
 }
 .taglist {
   margin: 0 10px;
+}
+.van-tag {
+  margin: 0 5px;
 }
 </style>

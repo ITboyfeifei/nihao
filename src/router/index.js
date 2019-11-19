@@ -6,6 +6,7 @@ import photo from "../components/photo/photoList.vue"
 import goods from "../components/goods/Goods.vue"
 import Search from '../components/Search/Search.vue'
 import Addgoods from '../components/Search/Addgoods.vue'
+import Member from '../components/Member/Member.vue'
 
 
 
@@ -42,6 +43,10 @@ const routes = [
   {
     path: '/addgoods',
     component: Addgoods
+  },
+  {
+    path: '/member',
+    component: Member
   },
 ]
 

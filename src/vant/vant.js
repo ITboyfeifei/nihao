@@ -21,7 +21,9 @@ import {
     Tag,
     Dialog,
     Notify,
-    Toast
+    Toast,
+    CouponCell,
+    CouponList
 } from 'vant';
 
 Vue.use(Swipe)
@@ -46,4 +48,6 @@ Vue.use(Tag)
 Vue.use(Dialog)
 Vue.use(Notify)
 Vue.use(Toast)
+Vue.use(CouponCell),
+Vue.use(CouponList),
 Vue.prototype.$Dialog = Dialog.confirm
